@@ -17,19 +17,9 @@ public class SubArray {
         }
 
         int[] subArray = new int[end - start]; // Create a new array of the required size
-        for (int i = start; i < end; i++) {
-            subArray[i - start] = nums[i]; // Copy elements from nums to subArray
-        }
+        System.arraycopy(nums, start, subArray, 0, end - start); // Copy elements from nums to subArray
 
         return subArray;
     }
-
-    public static void main(String[] args) {
-        SubArray sa = new SubArray();
-        int[] nums = {1, 2, 3, 4, 5};
-        
-        int[] result = sa.sub(nums, 1, 4); // Should return {2, 3, 4}
-        
-        System.out.println(java.util.Arrays.toString(result)); // Output: [2, 3, 4]
-    }
 }
+
